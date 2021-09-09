@@ -1,6 +1,7 @@
 package com.puzzlebench.myanimereviewk.presentation
 
 import android.app.Application
+import com.example.myitemssearchk.presentation.di.repositoriesModule
 import com.example.myitemssearchk.presentation.di.serviceModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.loadKoinModules
@@ -15,7 +16,8 @@ class MyAnimeReviewApplication : Application() {
             androidContext(this@MyAnimeReviewApplication)
             loadKoinModules(
                 listOf(
-                    serviceModule
+                    serviceModule,
+                    repositoriesModule
                 )
             )
         }

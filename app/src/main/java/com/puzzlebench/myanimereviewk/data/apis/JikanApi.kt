@@ -12,12 +12,12 @@ interface JikanApi {
     @GET("v3/top/anime/{page}")
     fun getAnimeTopList(
         @Path("page") page: Int = 1
-    ): Single<AnimeTopListResponse>
+    ): AnimeTopListResponse
 
     @GET("v3/search/anime")
     fun getAnimeSearchList(
         @Query("q") search: String,
         @Query("page") page: Int = 1,
         @Query("limit") limit: Int = 4
-    ): Single<AnimeSearchListResponse>
+    ): AnimeSearchListResponse
 }
