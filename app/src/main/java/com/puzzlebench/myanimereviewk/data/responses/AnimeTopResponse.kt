@@ -18,5 +18,5 @@ data class AnimeTopResponse(
     @Json(name = "start_date")
     val startDate: String,
     @Json(name = "end_date")
-    val endDate: Double
+    val endDate: String
 )
