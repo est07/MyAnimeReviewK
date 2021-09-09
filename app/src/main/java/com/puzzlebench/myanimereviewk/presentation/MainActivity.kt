@@ -1,7 +1,8 @@
-package com.puzzlebench.myanimereviewk
+package com.puzzlebench.myanimereviewk.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.puzzlebench.myanimereviewk.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
