@@ -1,4 +1,4 @@
-package com.puzzlebench.myanimereviewk.presentation
+package com.puzzlebench.myanimereviewk.presentation.viewModels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
