@@ -1,4 +1,4 @@
-package com.puzzlebench.myanimereviewk.presentation
+package com.puzzlebench.myanimereviewk.presentation.viewModels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -27,22 +27,22 @@ class AnimeDetailViewModel(
     fun getAnimeTopList(id:Long) {
         viewModelScope.launch {
             animeRepository.getAnimeDetail(id)
-                    .onStart { _animeDetailState.value = AnimeDetailState.Loading }
-                    .catch {
-                        _animeDetailState.value = AnimeDetailState.Error
-                    }
-                    .collect { _animeDetailState.value = AnimeDetailState.Success(it) }
+                .onStart { _animeDetailState.value = AnimeDetailState.Loading }
+                .catch {
+                    _animeDetailState.value = AnimeDetailState.Error
+                }
+                .collect { _animeDetailState.value = AnimeDetailState.Success(it) }
         }
     }
 
     fun getAnimeSearchList(search: String) {
         viewModelScope.launch {
             animeRepository.getAnimeSearchList(search)
-                    .onStart { _animeSearchState.value = AnimeSearchState.Loading }
-                    .catch {
-                        _animeSearchState.value = AnimeSearchState.Error
-                    }
-                    .collect { _animeSearchState.value = AnimeSearchState.Success(it) }
+                .onStart { _animeSearchState.value = AnimeSearchState.Loading }
+                .catch {
+                    _animeSearchState.value = AnimeSearchState.Error
+                }
+                .collect { _animeSearchState.value = AnimeSearchState.Success(it) }
         }
     }
 }
