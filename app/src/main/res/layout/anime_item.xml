@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/size_5dp"
+    android:layout_marginLeft="@dimen/size_5dp"
+    android:layout_marginRight="@dimen/size_5dp"
+    android:layout_marginBottom="@dimen/size_4dp"
+    app:cardCornerRadius="@dimen/size_4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imvAnime"
+            android:layout_width="@dimen/size_100dp"
+            android:layout_height="@dimen/size_130dp"
+            android:layout_margin="@dimen/size_8dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txvAnimeTitle"
+            android:layout_width="@dimen/size_0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size_8dp"
+            android:gravity="center_horizontal"
+            android:textAlignment="center"
+            android:textSize="@dimen/size_16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imvAnime"
+            app:layout_constraintTop_toTopOf="@+id/imvAnime"
+            tools:text="Title Text" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txvAnimeType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:textSize="@dimen/size_14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/txvAnimeTitle"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txvAnimeTitle"
+            app:layout_constraintTop_toBottomOf="@+id/txvAnimeTitle"
+            tools:text="Anime Type" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txvAnimeState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_4dp"
+            android:textSize="@dimen/size_14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/txvAnimeType"
+            app:layout_constraintEnd_toEndOf="@+id/txvAnimeTitle"
+            app:layout_constraintStart_toEndOf="@+id/txvAnimeType"
+            app:layout_constraintTop_toTopOf="@+id/txvAnimeType"
+            tools:text="Anime State" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txvAnimeScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:textSize="@dimen/size_14sp"
+            app:layout_constraintEnd_toEndOf="@+id/txvAnimeTitle"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txvAnimeType"
+            app:layout_constraintTop_toBottomOf="@+id/txvAnimeType"
+            tools:text="Anime Score" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txvAnimeRank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_4dp"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:textSize="@dimen/size_14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/txvAnimeScore"
+            app:layout_constraintEnd_toEndOf="@+id/txvAnimeTitle"
+            app:layout_constraintStart_toEndOf="@+id/txvAnimeType"
+            app:layout_constraintTop_toBottomOf="@+id/txvAnimeType"
+            app:layout_constraintVertical_bias="1.0"
+            tools:text="Anime Rank" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txvAnimeEpisodes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_8dp"
+            android:textSize="@dimen/size_14sp"
+            app:layout_constraintEnd_toEndOf="@+id/txvAnimeTitle"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txvAnimeType"
+            app:layout_constraintTop_toBottomOf="@+id/txvAnimeScore"
+            tools:text="Anime Episodes" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

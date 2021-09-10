@@ -2,4 +2,9 @@
     <string name="app_name">MyAnimeReviewK</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="anime_list_fragment.list_title">Anime Top</string>
+    <string name="anime_list_fragment.no_data_found">No data found</string>
+    <string name="anime_list_fragment.network_error">Network error</string>
+    <string name="anime_list_fragment.btn_retry">Try again</string>
 </resources>
