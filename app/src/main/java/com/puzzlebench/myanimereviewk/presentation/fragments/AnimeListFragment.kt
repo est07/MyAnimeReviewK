@@ -19,8 +19,8 @@ class AnimeListFragment : Fragment(R.layout.fragment_anime_list) {
 
     private val animeListViewModel: AnimeListViewModel by viewModel()
 
-    private val adapter = AnimeListAdapter(listOf()) { itemSearch ->
-        gotoAnimeFragment(R.id.action_animeListFragment_to_animeDetailFragment)
+    private val adapter = AnimeListAdapter(listOf()) { animeTop ->
+        gotoAnimeFragment(animeTop.id, animeTop.title)
     }
 
     private var binding: FragmentAnimeListBinding? = null
@@ -33,6 +33,7 @@ class AnimeListFragment : Fragment(R.layout.fragment_anime_list) {
         initListeners()
         initView()
     }
+
     private fun initListeners() {
         binding?.btnRetry?.setOnClickListener {
             getAnimeList()
@@ -130,8 +131,15 @@ class AnimeListFragment : Fragment(R.layout.fragment_anime_list) {
         }
     }
 
-    private fun gotoAnimeFragment(navigationAction: Int) {
-        view?.findNavController()?.navigate(navigationAction)
+    private fun gotoAnimeFragment(id: Long, title: String) {
+        val bundle = Bundle().apply {
+            putLong(AnimeDetailFragment.ANIME_ID, id)
+            putString(AnimeDetailFragment.ANIME_TITLE, title)
+        }
+        view?.findNavController()?.navigate(
+                R.id.action_animeListFragment_to_animeDetailFragment,
+                bundle
+        )
     }
 
     override fun onDestroy() {

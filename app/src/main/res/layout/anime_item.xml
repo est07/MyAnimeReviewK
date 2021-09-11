@@ -5,10 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/size_5dp"
-    android:layout_marginLeft="@dimen/size_5dp"
-    android:layout_marginRight="@dimen/size_5dp"
-    android:layout_marginBottom="@dimen/size_4dp"
+    android:layout_margin="@dimen/size_5dp"
     app:cardCornerRadius="@dimen/size_4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout

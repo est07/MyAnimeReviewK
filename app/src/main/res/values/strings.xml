@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">MyAnimeReviewK</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="anime_list_fragment.list_title">Anime Top</string>
     <string name="anime_list_fragment.no_data_found">No data found</string>
@@ -16,5 +14,17 @@
 
     <string name="item_list_fragment.detail_anime_finished">Finished Airing</string>
     <string name="item_list_fragment.detail_anime_on_airing">On airing</string>
+
+    <string name="anime_detail_fragment.anime_trailer_url_title">Trailer</string>
+    <string name="anime_detail_fragment.anime_synopsis_title">Synopsis</string>
+    <string name="anime_detail_fragment.related_animes_title">Related animes</string>
+
+    <string name="anime_detail_fragment.detail_anime_type">Type: %1$s</string>
+    <string name="anime_detail_fragment.detail_anime_state">State: %1$s</string>
+    <string name="anime_detail_fragment.detail_anime_rank">Rank: %1$s</string>
+    <string name="anime_detail_fragment.detail_anime_score">Score: %1$s</string>
+    <string name="anime_detail_fragment.detail_anime_episodes">Episodes: %1$s</string>
+    <string name="anime_detail_fragment.detail_anime_rating">Rating: %1$s</string>
+    <string name="anime_detail_fragment.detail_anime_trailer_link"><![CDATA[<u><font color=#0071ED>%1$s</font></u>]]></string>
 
 </resources>
