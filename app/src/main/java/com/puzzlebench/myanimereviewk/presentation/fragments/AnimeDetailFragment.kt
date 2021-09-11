@@ -2,15 +2,33 @@ package com.puzzlebench.myanimereviewk.presentation.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import com.puzzlebench.myanimereviewk.R
+import com.puzzlebench.myanimereviewk.databinding.FragmentAnimeDetailBinding
 
-class AnimeDetailFragment : Fragment() {
+class AnimeDetailFragment : Fragment(R.layout.fragment_anime_detail) {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_anime_detail, container, false)
+    private var binding: FragmentAnimeDetailBinding? = null
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentAnimeDetailBinding.bind(view)
+
+        initListeners()
+    }
+
+    private fun initListeners() {
+        binding?.tbAnimeDetail?.setNavigationOnClickListener {
+            backPressed()
+        }
+    }
+
+    private fun backPressed() {
+        activity?.onBackPressed()
+    }
+
+    override fun onDestroy() {
+        binding = null
+        super.onDestroy()
     }
 }

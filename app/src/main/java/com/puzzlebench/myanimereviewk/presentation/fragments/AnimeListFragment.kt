@@ -33,6 +33,7 @@ class AnimeListFragment : Fragment(R.layout.fragment_anime_list) {
         initListeners()
         initView()
     }
+
     private fun initListeners() {
         binding?.btnRetry?.setOnClickListener {
             getAnimeList()
