@@ -15,15 +15,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imvAnime"
-            android:layout_width="@dimen/size_100dp"
-            android:layout_height="@dimen/size_130dp"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvAnimeImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/size_8dp"
-            android:scaleType="fitXY"
+            android:elevation="@dimen/size_4dp"
+            app:cardCornerRadius="@dimen/size_4dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imvAnime"
+                android:layout_width="@dimen/size_100dp"
+                android:layout_height="@dimen/size_130dp"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.cardview.widget.CardView>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txvAnimeTitle"
@@ -35,8 +46,8 @@
             android:textSize="@dimen/size_16sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imvAnime"
-            app:layout_constraintTop_toTopOf="@+id/imvAnime"
+            app:layout_constraintStart_toEndOf="@+id/cvAnimeImage"
+            app:layout_constraintTop_toTopOf="@+id/cvAnimeImage"
             tools:text="Title Text" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -52,21 +63,33 @@
             app:layout_constraintTop_toBottomOf="@+id/txvAnimeTitle"
             tools:text="Anime Type" />
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txvAnimeState"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvAnimeState"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/size_4dp"
-            android:textSize="@dimen/size_14sp"
-            android:textStyle="bold"
+            app:cardBackgroundColor="@color/blue500"
+            android:elevation="@dimen/size_4dp"
+            app:cardCornerRadius="@dimen/size_4dp"
             app:layout_constraintBottom_toBottomOf="@+id/txvAnimeType"
             app:layout_constraintEnd_toEndOf="@+id/txvAnimeTitle"
             app:layout_constraintStart_toEndOf="@+id/txvAnimeType"
-            app:layout_constraintTop_toTopOf="@+id/txvAnimeType"
-            tools:text="Anime State" />
+            app:layout_constraintTop_toTopOf="@+id/txvAnimeType">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txvAnimeState"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_2dp"
+                android:layout_marginEnd="@dimen/size_2dp"
+                android:textSize="@dimen/size_14sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                tools:text="Anime State" />
+
+        </androidx.cardview.widget.CardView>
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txvAnimeScore"
+            android:id="@+id/txvAnimeRank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/size_8dp"
@@ -78,13 +101,13 @@
             tools:text="Anime Score" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txvAnimeRank"
+            android:id="@+id/txvAnimeScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/size_4dp"
             android:layout_marginTop="@dimen/size_8dp"
             android:textSize="@dimen/size_14sp"
-            app:layout_constraintBottom_toBottomOf="@+id/txvAnimeScore"
+            app:layout_constraintBottom_toBottomOf="@+id/txvAnimeRank"
             app:layout_constraintEnd_toEndOf="@+id/txvAnimeTitle"
             app:layout_constraintStart_toEndOf="@+id/txvAnimeType"
             app:layout_constraintTop_toBottomOf="@+id/txvAnimeType"
@@ -102,6 +125,15 @@
             app:layout_constraintStart_toStartOf="@+id/txvAnimeType"
             app:layout_constraintTop_toBottomOf="@+id/txvAnimeScore"
             tools:text="Anime Episodes" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imvScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/txvAnimeScore"
+            app:layout_constraintStart_toEndOf="@+id/txvAnimeScore"
+            app:layout_constraintTop_toTopOf="@+id/txvAnimeScore"
+            app:srcCompat="@drawable/ic_star_rate_24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

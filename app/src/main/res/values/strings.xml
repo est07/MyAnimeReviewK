@@ -7,4 +7,14 @@
     <string name="anime_list_fragment.no_data_found">No data found</string>
     <string name="anime_list_fragment.network_error">Network error</string>
     <string name="anime_list_fragment.btn_retry">Try again</string>
+
+    <string name="item_list_fragment.detail_anime_type">Type: %1$s</string>
+    <string name="item_list_fragment.detail_anime_state">State: %1$s</string>
+    <string name="item_list_fragment.detail_anime_rank">Rank: %1$s</string>
+    <string name="item_list_fragment.detail_anime_score">Score: %1$s</string>
+    <string name="item_list_fragment.detail_anime_episodes">Episodes: %1$s</string>
+
+    <string name="item_list_fragment.detail_anime_finished">Finished Airing</string>
+    <string name="item_list_fragment.detail_anime_on_airing">On airing</string>
+
 </resources>
