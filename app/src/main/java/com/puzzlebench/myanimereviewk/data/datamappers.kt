@@ -31,16 +31,11 @@ fun AnimeDetailResponse.toDomainAnimeDetail(): AnimeDetail =
         score = score,
         rating = rating,
         rank = rank,
-        trailerUrl = trailerUrl
+        trailerUrl = trailerUrl?: String()
     )
 
 fun AnimeSearchResponse.toDomainAnimeSearch(): AnimeSearch =
     AnimeSearch(
         title = title,
-        imageUrl = imageUrl,
-        synopsis = synopsis,
-        type = type,
-        episodes = episodes,
-        score = score,
-        rated = rated
+        imageUrl = imageUrl
     )

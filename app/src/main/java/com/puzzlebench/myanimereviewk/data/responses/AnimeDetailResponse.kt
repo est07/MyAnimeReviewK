@@ -22,5 +22,5 @@ data class AnimeDetailResponse(
     @Json(name = "rank")
     val rank: Int,
     @Json(name = "trailer_url")
-    val trailerUrl: String
+    val trailerUrl: String? = String()
 )

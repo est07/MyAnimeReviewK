@@ -19,4 +19,12 @@
     <string name="anime_detail_fragment.anime_synopsis_title">Synopsis</string>
     <string name="anime_detail_fragment.related_animes_title">Related animes</string>
 
+    <string name="anime_detail_fragment.detail_anime_type">Type: %1$s</string>
+    <string name="anime_detail_fragment.detail_anime_state">State: %1$s</string>
+    <string name="anime_detail_fragment.detail_anime_rank">Rank: %1$s</string>
+    <string name="anime_detail_fragment.detail_anime_score">Score: %1$s</string>
+    <string name="anime_detail_fragment.detail_anime_episodes">Episodes: %1$s</string>
+    <string name="anime_detail_fragment.detail_anime_rating">Rating: %1$s</string>
+    <string name="anime_detail_fragment.detail_anime_trailer_link"><![CDATA[<u><font color=#0071ED>%1$s</font></u>]]></string>
+
 </resources>
