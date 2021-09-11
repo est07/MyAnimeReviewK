@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/animeListFragment"
-        android:name="com.puzzlebench.myanimereviewk.presentation.AnimeListFragment"
+        android:name="com.puzzlebench.myanimereviewk.presentation.fragments.AnimeListFragment"
         android:label="fragment_anime_list"
         tools:layout="@layout/fragment_anime_list" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/animeDetailFragment"
-        android:name="com.puzzlebench.myanimereviewk.presentation.AnimeDetailFragment"
+        android:name="com.puzzlebench.myanimereviewk.presentation.fragments.AnimeDetailFragment"
         android:label="fragment_anime_detail"
         tools:layout="@layout/fragment_anime_detail" />
 </navigation>
