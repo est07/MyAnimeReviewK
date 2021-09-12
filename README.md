@@ -33,10 +33,6 @@ En el package de presentation se encuentran todos los componentes que son utiliz
 
  Lista de Anime Top
 
-<img src="/Images/search_navigation.gif" width="225" height="450">
-
- Detalle del Anime
-
 <img src="/Images/AnimeReviewSuccess.gif" width="225" height="450">
 
  Error de conexión en la Lista de Anime Top
