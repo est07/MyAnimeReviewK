@@ -16,7 +16,6 @@ import com.puzzlebench.myanimereviewk.R
 import com.puzzlebench.myanimereviewk.databinding.FragmentAnimeDetailBinding
 import com.puzzlebench.myanimereviewk.domain.models.AnimeDetail
 import com.puzzlebench.myanimereviewk.domain.models.AnimeSearch
-import com.puzzlebench.myanimereviewk.domain.models.AnimeTop
 import com.puzzlebench.myanimereviewk.presentation.adapters.RelatedAnimeAdapter
 import com.puzzlebench.myanimereviewk.presentation.states.AnimeDetailState
 import com.puzzlebench.myanimereviewk.presentation.states.AnimeSearchState
@@ -101,7 +100,7 @@ class AnimeDetailFragment : Fragment(R.layout.fragment_anime_detail) {
 
     private fun getAnimeDetail() {
         if (animeId != 0L) {
-            animeDetailViewModel.getAnimeTopList(animeId)
+            animeDetailViewModel.getAnimeDetail(animeId)
         }
     }
 
