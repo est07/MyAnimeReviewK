@@ -24,7 +24,7 @@ class AnimeDetailViewModel(
     val getAnimeSearchStateStateLiveData: LiveData<AnimeSearchState>
         get() = _animeSearchState
 
-    fun getAnimeTopList(id:Long) {
+    fun getAnimeDetail(id:Long) {
         viewModelScope.launch {
             animeRepository.getAnimeDetail(id)
                 .onStart { _animeDetailState.value = AnimeDetailState.Loading }
