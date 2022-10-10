@@ -10,6 +10,12 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
+    /*ajhsdkjahskdhaskdhaks
+    ajhsdkjahdkjashdkjahdkasd
+     */
+
+    //data4
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         initView()

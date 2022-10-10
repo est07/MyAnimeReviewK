@@ -9,16 +9,31 @@ data class AnimeTopResponse(
     val rank: Int,
     @Json(name = "title")
     val title: String,
-    @Json(name = "image_url")
-    val imageUrl: String,
+    @Json(name = "images")
+    val images: AnimeTopImageJPGResponse,
     @Json(name = "type")
     val type: String,
     @Json(name = "episodes")
     val episodes: Int,
     @Json(name = "score")
     val score: Double,
-    @Json(name = "start_date")
+    @Json(name = "aired")
+    val aired: AnimeTopAired
+)
+
+data class AnimeTopImageJPGResponse(
+    @Json(name = "jpg")
+    val imageJPG: AnimeTopImageResponse,
+)
+
+data class AnimeTopImageResponse(
+    @Json(name = "image_url")
+    val imageUrl: String,
+)
+
+data class AnimeTopAired(
+    @Json(name = "from")
     val startDate: String,
-    @Json(name = "end_date")
+    @Json(name = "to")
     val endDate: String
 )

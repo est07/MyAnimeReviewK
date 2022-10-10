@@ -1,8 +1,6 @@
 package com.puzzlebench.myanimereviewk.data
 
-import com.puzzlebench.myanimereviewk.data.responses.AnimeDetailResponse
-import com.puzzlebench.myanimereviewk.data.responses.AnimeSearchResponse
-import com.puzzlebench.myanimereviewk.data.responses.AnimeTopResponse
+import com.puzzlebench.myanimereviewk.data.responses.*
 import com.puzzlebench.myanimereviewk.domain.models.AnimeDetail
 import com.puzzlebench.myanimereviewk.domain.models.AnimeTop
 import org.junit.Assert.assertEquals
@@ -14,31 +12,49 @@ class MappersTests {
         id = 1L,
         rank = 1,
         title = "title",
-        imageUrl = "imageUrl",
+        images = AnimeTopImageJPGResponse(
+            imageJPG = AnimeTopImageResponse(
+                imageUrl = "imageUrl"
+            )
+        ),
         type = "type",
         episodes = 1,
         score = 5.0,
-        startDate = "startDate",
-        endDate = "endDate"
+        aired = AnimeTopAired(
+            startDate = "startDate",
+            endDate = "endDate"
+        )
     )
 
-    private val  animeDetailResponse = AnimeDetailResponse(
-        title = "title",
-        imageUrl = "imageUrl",
-        synopsis = "synopsis",
-        type = "type",
-        episodes = 1,
-        status = "status",
-        score = 5.0,
-        rating = "rating",
-        rank = 1,
-        trailerUrl = "trailerUrl"
+    private val animeDetailResponse = AnimeDetailResponse(
+        results = AnimeDetailDataResponse(
+            title = "title",
+            images = AnimeDetailImageJPGResponse(
+                imageJPG = AnimeDetailImageResponse(
+                    imageUrl = "imageUrl"
+                )
+            ),
+            synopsis = "synopsis",
+            type = "type",
+            episodes = 1,
+            status = "status",
+            score = 5.0,
+            rating = "rating",
+            rank = 1,
+            trailer = AnimeDetailTrailerResponse(
+                trailerUrl = "trailerUrl"
+            )
+        )
     )
 
     private val animeSearchListResponse =
         AnimeSearchResponse(
             title = "title",
-            imageUrl = "imageUrl"
+            images = AnimeSearchImageJPGResponse(
+                imageJPG = AnimeSearchImageResponse(
+                    imageUrl = "imageUrl"
+                )
+            )
         )
 
     @Test
@@ -62,7 +78,7 @@ class MappersTests {
 
     @Test
     fun toDomainAnimeDetail() {
-        val result = animeDetailResponse.toDomainAnimeDetail()
+        val result = animeDetailResponse.results.toDomainAnimeDetail()
 
         assertEquals(
             AnimeDetail(
@@ -86,7 +102,7 @@ class MappersTests {
 
         with(animeSearchListResponse) {
             assertEquals(title, result.title)
-            assertEquals(imageUrl, result.imageUrl)
+            assertEquals(images.imageJPG.imageUrl, result.imageUrl)
         }
     }
 
