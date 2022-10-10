@@ -12,12 +12,12 @@ fun AnimeTopResponse.toDomainAnimeTop(): AnimeTop =
         id = id,
         rank = rank,
         title = title,
-        imageUrl = imageUrl,
+        imageUrl = images.imageJPG.imageUrl,
         type = type,
         episodes = episodes,
         score = score,
-        startDate = startDate,
-        endDate = endDate
+        startDate = aired.startDate,
+        endDate = aired.endDate
     )
 
 fun AnimeDetailResponse.toDomainAnimeDetail(): AnimeDetail =

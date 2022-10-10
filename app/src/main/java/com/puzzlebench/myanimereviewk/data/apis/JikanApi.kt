@@ -9,17 +9,19 @@ import retrofit2.http.Query
 
 interface JikanApi {
 
-    @GET("v3/top/anime/{page}")
+    @GET("v4/top/anime")
     suspend fun getAnimeTopList(
-        @Path("page") page: Int = 1
+        @Query("type") type: String = "tv",
+        @Query("page") page: Int = 1,
+        @Query("limit") limit: Int = 20
     ): AnimeTopListResponse
 
-    @GET("v3/anime/{id}")
+    @GET("v4/anime/{id}")
     suspend fun getAnimeDetail(
             @Path("id") id: Long
     ): AnimeDetailResponse
 
-    @GET("v3/search/anime")
+    @GET("v4/anime")
     suspend fun getAnimeSearchList(
         @Query("q") search: String,
         @Query("page") page: Int = 1,

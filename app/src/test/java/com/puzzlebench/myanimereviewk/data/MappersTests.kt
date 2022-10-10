@@ -1,8 +1,6 @@
 package com.puzzlebench.myanimereviewk.data
 
-import com.puzzlebench.myanimereviewk.data.responses.AnimeDetailResponse
-import com.puzzlebench.myanimereviewk.data.responses.AnimeSearchResponse
-import com.puzzlebench.myanimereviewk.data.responses.AnimeTopResponse
+import com.puzzlebench.myanimereviewk.data.responses.*
 import com.puzzlebench.myanimereviewk.domain.models.AnimeDetail
 import com.puzzlebench.myanimereviewk.domain.models.AnimeTop
 import org.junit.Assert.assertEquals
@@ -14,12 +12,18 @@ class MappersTests {
         id = 1L,
         rank = 1,
         title = "title",
-        imageUrl = "imageUrl",
+        images = AnimeTopImageJPGResponse(
+            imageJPG = AnimeTopImageResponse(
+                imageUrl = "imageUrl"
+            )
+        ),
         type = "type",
         episodes = 1,
         score = 5.0,
-        startDate = "startDate",
-        endDate = "endDate"
+        aired = AnimeTopAired(
+            startDate = "startDate",
+            endDate = "endDate"
+        )
     )
 
     private val  animeDetailResponse = AnimeDetailResponse(
