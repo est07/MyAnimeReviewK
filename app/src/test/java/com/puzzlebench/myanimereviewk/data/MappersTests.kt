@@ -26,23 +26,35 @@ class MappersTests {
         )
     )
 
-    private val  animeDetailResponse = AnimeDetailResponse(
-        title = "title",
-        imageUrl = "imageUrl",
-        synopsis = "synopsis",
-        type = "type",
-        episodes = 1,
-        status = "status",
-        score = 5.0,
-        rating = "rating",
-        rank = 1,
-        trailerUrl = "trailerUrl"
+    private val animeDetailResponse = AnimeDetailResponse(
+        results = AnimeDetailDataResponse(
+            title = "title",
+            images = AnimeDetailImageJPGResponse(
+                imageJPG = AnimeDetailImageResponse(
+                    imageUrl = "imageUrl"
+                )
+            ),
+            synopsis = "synopsis",
+            type = "type",
+            episodes = 1,
+            status = "status",
+            score = 5.0,
+            rating = "rating",
+            rank = 1,
+            trailer = AnimeDetailTrailerResponse(
+                trailerUrl = "trailerUrl"
+            )
+        )
     )
 
     private val animeSearchListResponse =
         AnimeSearchResponse(
             title = "title",
-            imageUrl = "imageUrl"
+            images = AnimeSearchImageJPGResponse(
+                imageJPG = AnimeSearchImageResponse(
+                    imageUrl = "imageUrl"
+                )
+            )
         )
 
     @Test
@@ -66,7 +78,7 @@ class MappersTests {
 
     @Test
     fun toDomainAnimeDetail() {
-        val result = animeDetailResponse.toDomainAnimeDetail()
+        val result = animeDetailResponse.results.toDomainAnimeDetail()
 
         assertEquals(
             AnimeDetail(
@@ -90,7 +102,7 @@ class MappersTests {
 
         with(animeSearchListResponse) {
             assertEquals(title, result.title)
-            assertEquals(imageUrl, result.imageUrl)
+            assertEquals(images.imageJPG.imageUrl, result.imageUrl)
         }
     }
 

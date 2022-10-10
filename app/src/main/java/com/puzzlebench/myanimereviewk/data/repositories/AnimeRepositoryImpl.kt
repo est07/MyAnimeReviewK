@@ -20,7 +20,7 @@ class AnimeRepositoryImpl(private val api: JikanApi) : AnimeRepository {
 
     override fun getAnimeDetail(id: Long): Flow<AnimeDetail> =
         flow {
-            emit(api.getAnimeDetail(id).toDomainAnimeDetail())
+            emit(api.getAnimeDetail(id).results.toDomainAnimeDetail())
         }
 
     override fun getAnimeSearchList(search: String): Flow<List<AnimeSearch>> =
