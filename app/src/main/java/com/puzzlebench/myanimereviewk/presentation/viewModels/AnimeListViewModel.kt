@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.puzzlebench.myanimereviewk.domain.repositories.AnimeRepository
 import com.puzzlebench.myanimereviewk.presentation.states.AnimeListState
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onStart

@@ -7,11 +7,11 @@ import com.puzzlebench.myanimereviewk.data.toDomainAnimeTop
 import com.puzzlebench.myanimereviewk.domain.models.AnimeDetail
 import com.puzzlebench.myanimereviewk.domain.models.AnimeSearch
 import com.puzzlebench.myanimereviewk.domain.models.AnimeTop
-import com.puzzlebench.myanimereviewk.domain.repositories.AnimeRepository
+import com.puzzlebench.myanimereviewk.domain.repositories.AnimeRemoteRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-class AnimeRepositoryImpl(private val api: JikanApi) : AnimeRepository {
+class AnimeRemoteRepositoryImpl(private val api: JikanApi) : AnimeRemoteRepository {
 
     override suspend fun getAnimeTopList(): Flow<List<AnimeTop>> =
         flow {
