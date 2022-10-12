@@ -13,9 +13,9 @@ import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
 class AnimeDetailViewModel(
-        private val animeRepository: AnimeRepository,
-        private val _animeDetailState: MutableLiveData<AnimeDetailState>,
-        private val _animeSearchState: MutableLiveData<AnimeSearchState>
+    private val animeRepository: AnimeRepository,
+    private val _animeDetailState: MutableLiveData<AnimeDetailState>,
+    private val _animeSearchState: MutableLiveData<AnimeSearchState>
 ) : ViewModel() {
 
     val getAnimeDetailStateLiveData: LiveData<AnimeDetailState>
