@@ -7,9 +7,9 @@ import kotlinx.coroutines.flow.Flow
 
 interface AnimeRepository {
 
-    fun getAnimeTopList(): Flow<List<AnimeTop>>
+    suspend fun getAnimeTopList(): Flow<List<AnimeTop>>
 
-    fun getAnimeDetail(id:Long): Flow<AnimeDetail>
+    suspend fun getAnimeDetail(id:Long): Flow<AnimeDetail>
 
-    fun getAnimeSearchList(search: String): Flow<List<AnimeSearch>>
+    suspend fun getAnimeSearchList(search: String): Flow<List<AnimeSearch>>
 }
