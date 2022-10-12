@@ -10,35 +10,35 @@ data class AnimeDetailResponse(
 
 data class AnimeDetailDataResponse(
     @Json(name = "title")
-    val title: String,
+    val title: String? = String(),
     @Json(name = "images")
-    val images:  AnimeDetailImageJPGResponse,
+    val images:  AnimeDetailImageJPGResponse?,
     @Json(name = "synopsis")
-    val synopsis: String,
+    val synopsis: String? = String(),
     @Json(name = "type")
-    val type: String,
+    val type: String? = String(),
     @Json(name = "episodes")
-    val episodes: Int,
+    val episodes: Int? = 0,
     @Json(name = "status")
-    val status: String,
+    val status: String? = String(),
     @Json(name = "score")
-    val score: Double,
+    val score: Double? = 0.0,
     @Json(name = "rating")
-    val rating: String,
+    val rating: String? = String(),
     @Json(name = "rank")
-    val rank: Int,
+    val rank: Int? = 0,
     @Json(name = "trailer")
-    val trailer: AnimeDetailTrailerResponse
+    val trailer: AnimeDetailTrailerResponse?
 )
 
 data class AnimeDetailImageJPGResponse(
     @Json(name = "jpg")
-    val imageJPG: AnimeDetailImageResponse,
+    val imageJPG: AnimeDetailImageResponse?,
 )
 
 data class AnimeDetailImageResponse(
     @Json(name = "image_url")
-    val imageUrl: String,
+    val imageUrl: String? = String(),
 )
 
 data class AnimeDetailTrailerResponse(

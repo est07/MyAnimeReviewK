@@ -10,32 +10,32 @@ import com.puzzlebench.myanimereviewk.domain.models.AnimeTop
 fun AnimeTopResponse.toDomainAnimeTop(): AnimeTop =
     AnimeTop(
         id = id,
-        rank = rank,
-        title = title,
-        imageUrl = images.imageJPG.imageUrl,
-        type = type,
-        episodes = episodes,
-        score = score,
-        startDate = aired.startDate,
-        endDate = aired.endDate
+        rank = rank ?: 0,
+        title = title ?: String(),
+        imageUrl = images?.imageJPG?.imageUrl ?: String(),
+        type = type ?: String(),
+        episodes = episodes ?: 0,
+        score = score ?: 0.0,
+        startDate = aired?.startDate ?: String(),
+        endDate = aired?.endDate ?: String()
     )
 
 fun AnimeDetailDataResponse.toDomainAnimeDetail(): AnimeDetail =
     AnimeDetail(
-        title = title,
-        imageUrl = images.imageJPG.imageUrl,
-        synopsis = synopsis,
-        type = type,
-        episodes = episodes,
-        status = status,
-        score = score,
-        rating = rating,
-        rank = rank,
-        trailerUrl = trailer.trailerUrl?: String()
+        title = title ?: String(),
+        imageUrl = images?.imageJPG?.imageUrl ?: String(),
+        synopsis = synopsis ?: String(),
+        type = type ?: String(),
+        episodes = episodes ?: 0,
+        status = status ?: String(),
+        score = score ?: 0.0,
+        rating = rating ?: String(),
+        rank = rank ?: 0,
+        trailerUrl = trailer?.trailerUrl ?: String()
     )
 
 fun AnimeSearchResponse.toDomainAnimeSearch(): AnimeSearch =
     AnimeSearch(
-        title = title,
-        imageUrl = images.imageJPG.imageUrl
+        title = title ?: String(),
+        imageUrl = images?.imageJPG?.imageUrl ?: String()
     )

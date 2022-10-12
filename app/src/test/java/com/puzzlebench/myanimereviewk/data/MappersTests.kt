@@ -102,7 +102,7 @@ class MappersTests {
 
         with(animeSearchListResponse) {
             assertEquals(title, result.title)
-            assertEquals(images.imageJPG.imageUrl, result.imageUrl)
+            assertEquals(images?.imageJPG?.imageUrl, result.imageUrl)
         }
     }
 

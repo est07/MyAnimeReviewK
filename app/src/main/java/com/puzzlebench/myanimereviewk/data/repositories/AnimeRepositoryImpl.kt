@@ -13,17 +13,17 @@ import kotlinx.coroutines.flow.flow
 
 class AnimeRepositoryImpl(private val api: JikanApi) : AnimeRepository {
 
-    override fun getAnimeTopList(): Flow<List<AnimeTop>> =
+    override suspend fun getAnimeTopList(): Flow<List<AnimeTop>> =
         flow {
             emit(api.getAnimeTopList().results.map { it.toDomainAnimeTop() })
         }
 
-    override fun getAnimeDetail(id: Long): Flow<AnimeDetail> =
+    override suspend fun getAnimeDetail(id: Long): Flow<AnimeDetail> =
         flow {
             emit(api.getAnimeDetail(id).results.toDomainAnimeDetail())
         }
 
-    override fun getAnimeSearchList(search: String): Flow<List<AnimeSearch>> =
+    override suspend fun getAnimeSearchList(search: String): Flow<List<AnimeSearch>> =
         flow {
             emit(api.getAnimeSearchList(search).results.map { it.toDomainAnimeSearch() })
         }
