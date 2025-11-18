@@ -14,8 +14,10 @@
         android:theme="@style/Theme.MyAnimeReviewK"
         tools:replace="android:appComponentFactory"
         android:appComponentFactory="@string/app_name"
-        android:name=".presentation.MyAnimeReviewApplication">
-        <activity android:name=".presentation.MainActivity">
+        android:name=".presentation.MyAnimeReviewApplication"
+        tools:targetApi="28">
+        <activity android:name=".presentation.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -41,19 +41,21 @@ class AnimeListFragment : Fragment(R.layout.fragment_anime_list) {
     }
 
     private fun initObservers() {
-        animeListViewModel.getAnimeListStateLiveData.observe(viewLifecycleOwner, { state ->
+        animeListViewModel.getAnimeListStateLiveData.observe(viewLifecycleOwner) { state ->
             when (state) {
                 is AnimeListState.Loading -> {
                     showProgress()
                 }
+
                 is AnimeListState.Success -> {
                     validateAnimeList(state.item)
                 }
+
                 else -> {
                     showNetworkError()
                 }
             }
-        })
+        }
     }
 
     private fun getAnimeList() {

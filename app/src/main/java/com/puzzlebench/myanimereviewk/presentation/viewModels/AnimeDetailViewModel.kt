@@ -9,6 +9,7 @@ import com.puzzlebench.myanimereviewk.presentation.states.AnimeDetailState
 import com.puzzlebench.myanimereviewk.presentation.states.AnimeSearchState
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
