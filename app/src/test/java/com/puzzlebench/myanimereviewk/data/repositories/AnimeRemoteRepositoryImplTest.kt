@@ -1,20 +1,19 @@
 package com.puzzlebench.myanimereviewk.data.repositories
 
-import com.nhaarman.mockitokotlin2.mock
-import com.nhaarman.mockitokotlin2.verify
-import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
 import com.puzzlebench.myanimereviewk.data.apis.JikanApi
 import com.puzzlebench.myanimereviewk.data.responses.*
 import com.puzzlebench.myanimereviewk.domain.models.AnimeDetail
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
+import org.mockito.Mockito.mock
 import org.mockito.Mockito.`when`
 import org.mockito.junit.MockitoJUnitRunner
+import org.mockito.kotlin.verify
+import org.mockito.kotlin.verifyNoMoreInteractions
 
 @RunWith(MockitoJUnitRunner::class)
 class AnimeRemoteRepositoryImplTest {

@@ -1,7 +1,5 @@
 package com.puzzlebench.myanimereviewk.data.repositories
 
-import com.nhaarman.mockitokotlin2.verify
-import com.nhaarman.mockitokotlin2.verifyNoMoreInteractions
 import com.puzzlebench.myanimereviewk.domain.repositories.AnimeRemoteRepository
 import com.puzzlebench.myanimereviewk.domain.repositories.AnimeRepositoryImpl
 import kotlinx.coroutines.CoroutineDispatcher
@@ -12,6 +10,8 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnitRunner
+import org.mockito.kotlin.verify
+import org.mockito.kotlin.verifyNoMoreInteractions
 
 @RunWith(MockitoJUnitRunner::class)
 class AnimeRepositoryImplTest {

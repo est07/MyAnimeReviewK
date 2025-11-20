@@ -2,13 +2,10 @@ package com.puzzlebench.myanimereviewk.presentation.viewModels
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.MutableLiveData
-import com.nhaarman.mockitokotlin2.mock
-import com.nhaarman.mockitokotlin2.verifyZeroInteractions
-import com.puzzlebench.myanimereviewk.CoroutinesTestRule
+import com.puzzlebench.myanimereviewk.MainDispatcherRule
 import com.puzzlebench.myanimereviewk.domain.models.AnimeTop
 import com.puzzlebench.myanimereviewk.domain.repositories.AnimeRepository
 import com.puzzlebench.myanimereviewk.presentation.states.AnimeListState
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.runBlocking
@@ -17,10 +14,12 @@ import org.junit.Assert.assertEquals
 import org.junit.rules.TestRule
 import org.junit.runner.RunWith
 import org.mockito.Mock
+import org.mockito.Mockito.mock
 import org.mockito.Mockito.verify
 import org.mockito.Mockito.verifyNoMoreInteractions
 import org.mockito.Mockito.`when`
 import org.mockito.junit.MockitoJUnitRunner
+import org.mockito.kotlin.verifyNoInteractions
 
 @RunWith(MockitoJUnitRunner::class)
 class AnimeListViewModelTest {
@@ -28,9 +27,8 @@ class AnimeListViewModelTest {
     @get:Rule
     var rule: TestRule = InstantTaskExecutorRule()
 
-    @ExperimentalCoroutinesApi
     @get:Rule
-    var coroutinesTestRule: CoroutinesTestRule = CoroutinesTestRule()
+    val dispatcherRule = MainDispatcherRule()
 
     @Mock
     private lateinit var animeRepository: AnimeRepository
@@ -76,7 +74,7 @@ class AnimeListViewModelTest {
         verify(animeRepository).getAnimeTopList()
         verify(_animeListState).value = AnimeListState.Loading
         verify(_animeListState).value = AnimeListState.Success(animeTopResult)
-        verifyZeroInteractions(animeTopResult)
+        verifyNoInteractions(animeTopResult)
     }
 
     @Test
